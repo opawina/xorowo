@@ -1,7 +1,5 @@
 <HelloScreen>:
     BoxLayout:
-        orientation: 'vertical'
-
         Label:
             font_size: root.width / 32
             center_x: root.width / 2
@@ -9,24 +7,51 @@
             text: "Привет.\nЭто приложение"
         Button:
             text: 'Понял'
-            on_release: root.manager.current = 'main'
+            on_release: root.manager.current = 'write'
             font_size: root.width / 9
             size_hint: .9, .2
 
 
 
 <MainScreen>
-    BoxLayout:
+    FloatLayout:
+        Button:
+            text: "+"
+            on_release: root.manager.current = 'write'
+            center: self.parent.center
+            font_size: '{}'.format(root.width / 16)
         Button:
             text: "Хорошо"
+            on_release: root.manager.current = 'read'
             center: self.parent.center
             font_size: '{}'.format(root.width / 16)
 
 
 
 <ReadScreen>
-
     Label:
+        text: 'ReadScreen'
+        font_size: root.width / 32
+        center_x: root.width / 2
+        top: root.top - 50
+
+
+
+<WriteScreen>
+    BoxLayout:
+        Label:
+            text: 'WriteScreen'
+            font_size: root.width / 32
+            center_x: root.width / 2
+            top: root.top - 50
+        TextInput:
+
+
+
+
+<AboutScreen>
+    Label:
+        text: 'About'
         font_size: root.width / 32
         center_x: root.width / 2
         top: root.top - 50

@@ -1,5 +1,7 @@
-from kivy.uix.widget import Widget
+from kivy.uix.screenmanager import Screen
+
+from utils.storage import Storage
 
 
-class BaseScreen(Widget):
-    pass
+class BaseScreen(Screen):
+    storage = Storage()
