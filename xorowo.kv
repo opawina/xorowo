@@ -1,0 +1,34 @@
+<HelloScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            font_size: root.width / 32
+            center_x: root.width / 2
+            top: root.top - 50
+            text: "Привет.\nЭто приложение"
+        Button:
+            text: 'Понял'
+            on_release: root.manager.current = 'main'
+            font_size: root.width / 9
+            size_hint: .9, .2
+
+
+
+<MainScreen>
+    BoxLayout:
+        Button:
+            text: "Хорошо"
+            center: self.parent.center
+            font_size: '{}'.format(root.width / 16)
+
+
+
+<ReadScreen>
+
+    Label:
+        font_size: root.width / 32
+        center_x: root.width / 2
+        top: root.top - 50
+
+
