@@ -7,6 +7,7 @@ from src.hello_screen import HelloScreen
 from src.main_screen import MainScreen
 from src.read_screen import ReadScreen
 from src.write_screen import WriteScreen
+from utils.storage import Storage
 
 
 kivy.require('2.1.0')
@@ -16,14 +17,14 @@ class XorowoApp(App):
 
     def build(self):
         sm = ScreenManager()
-        sm.add_widget(HelloScreen())
+        storage = Storage()
+        if not storage.get_all():
+            sm.add_widget(HelloScreen())
+        del storage
         sm.add_widget(MainScreen(name='main'))
         sm.add_widget(AboutScreen(name='about'))
         sm.add_widget(ReadScreen(name='read'))
         sm.add_widget(WriteScreen(name='write'))
-
-        if HelloScreen.storage.get_all():
-           sm.current('main')
 
         return sm
 

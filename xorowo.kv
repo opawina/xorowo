@@ -38,13 +38,26 @@
 
 
 <WriteScreen>
+    text_input: txt_inp
+    button_apply: btn_apl
+
     BoxLayout:
+        orient: 'vertical'
+
         Label:
             text: 'WriteScreen'
             font_size: root.width / 32
             center_x: root.width / 2
             top: root.top - 50
+
         TextInput:
+            id: txt_inp
+
+        Button:
+            id: btn_apl
+            text: 'Apply'
+            on_release: root.apply()
+
 
 
 

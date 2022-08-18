@@ -7,14 +7,15 @@ class Storage(object):
     store = JsonStore('store.json')
 
     def get_all(self):
-        return self.store
+        # TODO
+        print(self.store.keys())
+        return self.store.keys()
 
     def get_random(self):
         count = self.store.count()
         if count <= 0:
             return None
         key = randint(0, self.store.count() - 1)
-        print('222222222222222', key)
         return self.store.get(key)
 
     def put(self, value):
