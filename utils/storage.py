@@ -7,7 +7,7 @@ class Storage(object):
     store = JsonStore('store.json')
 
     def get_all(self):
-        # TODO
+        # TODO 2 not needed yet
         print(self.store.keys())
         return self.store.keys()
 

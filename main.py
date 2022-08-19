@@ -1,5 +1,6 @@
 import kivy
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager
 
 from src.about_screen import AboutScreen
@@ -11,6 +12,7 @@ from utils.storage import Storage
 
 
 kivy.require('2.1.0')
+Window.size = (540, 960)
 
 
 class XorowoApp(App):

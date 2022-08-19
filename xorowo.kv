@@ -1,11 +1,31 @@
+<ButtonMain>
+    size: 100, 100
+
+<ButtonDown>
+    size: 100, 100
+
+<ButtonMenu>
+    size: 100, 100
+
+<ButtonAdd>
+    size: 100, 100
+
+<ReadField>
+    size: 100, 100
+    text: root.read_field.text
+
+
+
 <HelloScreen>:
+    button_down: btn_down
     BoxLayout:
         Label:
             font_size: root.width / 32
             center_x: root.width / 2
             top: root.top - 50
             text: "Привет.\nЭто приложение"
-        Button:
+        ButtonDown:
+            id: btn_dwn
             text: 'Понял'
             on_release: root.manager.current = 'write'
             font_size: root.width / 9
@@ -14,35 +34,47 @@
 
 
 <MainScreen>
-    FloatLayout:
-        Button:
+    button_main: btn_main
+    button_add: btn_add
+    BoxLayout:
+        orientation: 'vertical'
+
+        ButtonAdd:
+            id: btn_add
             text: "+"
             on_release: root.manager.current = 'write'
             center: self.parent.center
             font_size: '{}'.format(root.width / 16)
-        Button:
+        ButtonMain:
+            id: btn_main
             text: "Хорошо"
-            on_release: root.manager.current = 'read'
             center: self.parent.center
             font_size: '{}'.format(root.width / 16)
-
-
-
-<ReadField>
-    size: 100, 100
-    text: root.read_field.text
+            on_release: root.manager.current = 'read'
 
 
 
 <ReadScreen>
     read_field: read_fld
+    button_menu: btn_menu
+    button_add: btn_add
+    button_down: btn_down
 
     BoxLayout:
         orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            ButtonMenu:
+                id: btn_menu
+                text: 'Menu'
+                on_release: root.manager.current = 'menu'
 
-        Button:
-            text: 'Add one'
-            on_release: root.manager.current = 'write'
+            Label:
+
+            ButtonAdd:
+                id: btn_add
+                text: 'Add one'
+                on_release: root.manager.current = 'write'
         Label:
             text: 'ReadScreen'
             font_size: root.width / 32
@@ -50,12 +82,16 @@
             top: root.top - 50
         ReadField:
             id: read_fld
+        ButtonDown:
+            id: btn_down
+            text: 'One more'
+            on_release: root.read_field.get()
 
 
 
 <WriteScreen>
     text_input: txt_inp
-    button_apply: btn_apl
+    button_down: btn_down
 
     BoxLayout:
         orientation: 'vertical'
@@ -69,12 +105,10 @@
         TextInput:
             id: txt_inp
 
-        Button:
-            id: btn_apl
+        ButtonDown:
+            id: btn_down
             text: 'Apply'
-            on_release: root.apply()
-
-
+            on_release: root.apply(root.manager)
 
 
 
