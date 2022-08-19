@@ -28,12 +28,28 @@
 
 
 
+<ReadField>
+    size: 100, 100
+    text: root.read_field.text
+
+
+
 <ReadScreen>
-    Label:
-        text: 'ReadScreen'
-        font_size: root.width / 32
-        center_x: root.width / 2
-        top: root.top - 50
+    read_field: read_fld
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Button:
+            text: 'Add one'
+            on_release: root.manager.current = 'write'
+        Label:
+            text: 'ReadScreen'
+            font_size: root.width / 32
+            center_x: root.width / 2
+            top: root.top - 50
+        ReadField:
+            id: read_fld
 
 
 
@@ -42,7 +58,7 @@
     button_apply: btn_apl
 
     BoxLayout:
-        orient: 'vertical'
+        orientation: 'vertical'
 
         Label:
             text: 'WriteScreen'

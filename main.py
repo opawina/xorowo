@@ -20,11 +20,10 @@ class XorowoApp(App):
         storage = Storage()
         if not storage.get_all():
             sm.add_widget(HelloScreen())
-        del storage
         sm.add_widget(MainScreen(name='main'))
-        sm.add_widget(AboutScreen(name='about'))
-        sm.add_widget(ReadScreen(name='read'))
         sm.add_widget(WriteScreen(name='write'))
+        sm.add_widget(ReadScreen(name='read'))
+        sm.add_widget(AboutScreen(name='about'))
 
         return sm
 

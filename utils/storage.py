@@ -15,8 +15,8 @@ class Storage(object):
         count = self.store.count()
         if count <= 0:
             return None
-        key = randint(0, self.store.count() - 1)
-        return self.store.get(key)
+        key = randint(1, self.store.count())
+        return self.store.get(str(key))
 
     def put(self, value):
         self.store.put(self.store.count() + 1, val=value)
