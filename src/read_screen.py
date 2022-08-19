@@ -1,7 +1,6 @@
 from kivy.uix.label import Label
 
 from src.base_screen import BaseScreen
-from utils.button_add import ButtonAdd
 from utils.button_down import ButtonDown
 
 
@@ -28,4 +27,4 @@ class ReadField(Label):
 class ReadScreen(BaseScreen):
     read_field = ReadField()
     button_down = ButtonDown()
-    button_add = ButtonAdd()
+
