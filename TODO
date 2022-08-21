@@ -1,14 +1,14 @@
-FORECAST: 5DAYS = 5 hours per day -> 15s.p./3h
+FORECAST: 3DAYS = 4 hours per day -> 12s.p./4h
 FINISH: 2565-08-24
 
 
 ============
-2+2+2+1 TODO`s
+3+1 TODO`s
 7 cosmetics
 1 texts
 
 ____________
-TOTAL: 16s.p.
+TOTAL: 12s.p.
 
 
 ==========
@@ -18,6 +18,10 @@ TOTAL: 16s.p.
 4
 2022-08-19
 4
+2022-08-20
+2
+2022-08-21
+3
 
 __________
-TOTAL: 11 30h
+TOTAL: 17h

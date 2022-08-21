@@ -1,30 +1,16 @@
 from kivy.uix.label import Label
 
 from src.base_screen import BaseScreen
-from utils.button_down import ButtonDown
 
 
 class ReadField(Label):
-    # TODO 0 broken
-    # TODO 1 does not update new msg on "One more" button
-
-    text_output = BaseScreen.storage.get_random()
-    # TODO 1 instansiation class during import
-    read_field = Label(text='EMPTY')
-    if text_output:
-        read_field = Label(text=text_output['val'])
-        # print('FIELD:' + read_field.text)
-
-    def get(self):
-        text_output = BaseScreen.storage.get_random()
-        # TODO 1 instansiation class during import
-        # read_field = Label(text='EMPTY')
-        if text_output:
-            return Label(text=text_output['val'])
-            print('FIELD:' + read_field.text)
+    out = BaseScreen.storage.get_random()['val']
 
 
+# TODO 0    Add 1 item. -> Start reding and KeyError: '3'
+# при чтении следующих сообщений можно попасть на
+# добавленный только что элемент. Как будто контекст для сторажда не обновляется
 class ReadScreen(BaseScreen):
-    read_field = ReadField()
-    button_down = ButtonDown()
 
+    def get_one(self):
+        self.ids.read_fld.text = self.storage.get_random()['val']
