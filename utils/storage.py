@@ -19,7 +19,7 @@ class Storage(object):
         return self.store.get(str(key))
 
     def put(self, value):
-        self.store.put(self.store.count() + 1, val=value)
+        self.store.put(str(self.store.count() + 1), val=value)
 
     def del_one(self, key):
         self.store.delete(key)

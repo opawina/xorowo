@@ -2,7 +2,6 @@ import kivy
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, NoTransition
-from kivy.lang import Builder
 
 from src.about_screen import AboutScreen
 from src.hello_screen import HelloScreen
@@ -15,13 +14,12 @@ from utils.storage import Storage
 
 kivy.require('2.1.0')
 Window.size = (540, 960)
-Builder.load_file('xorowo.kv')
 
 
 class XorowoApp(App):
 
     def build(self):
-        sm = ScreenManager(transition=NoTransition())
+        sm = HelloScreen.sm
         storage = Storage()
         if not storage.get_all():
             sm.add_widget(HelloScreen())

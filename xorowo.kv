@@ -21,7 +21,7 @@
 
         Label:
             text: "Привет!\nЭто приложение поможет"
-        ButtonMain:
+        ButtonDown:
             on_release: root.manager.current = 'write'
 
 
@@ -29,7 +29,8 @@
 <MainScreen>
     BoxLayout:
         orientation: 'vertical'
-        size_hint: (1, .5)
+        padding: 10
+
         BoxLayout:
             orientation: 'horizontal'
             ButtonMenu:

@@ -1,27 +1,26 @@
-FORECAST: 3DAYS = 4 hours per day -> 12s.p./4h
-FINISH: 2565-08-24
+FORECAST: 3DAYS = 3 hours per day -> 8s.p./3h
+FINISH: 2565-08-25
 
 
 ============
-3+1 TODO`s
-7 cosmetics
+1 TODO`s
+6 cosmetics
 1 texts
 
 ____________
-TOTAL: 12s.p.
+TOTAL: 8s.p.
 
 
 ==========
 2022-08-17
 4
 2022-08-18
-4
+4    8
 2022-08-19
-4
+4    12
 2022-08-20
-2
+2    14
 2022-08-21
-3
-
-__________
-TOTAL: 17h
+3    17
+2022-08-21
+2:30 19:30
